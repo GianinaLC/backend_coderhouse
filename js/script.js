@@ -17,8 +17,8 @@ class Usuario {
     } 
     
     countMascotas(){
-        let CantidadMascotas = this.mascota.length;
-        console.log( `La cantidad de mascotas que tiene ${this.name} es: ` + CantidadMascotas)
+        let cantidadMascotas = this.mascota.length;
+        console.log( `La cantidad de mascotas que tiene ${this.name} es: ` + cantidadMascotas)
     }
 
     addBook(titulo, autor){
@@ -34,7 +34,7 @@ class Usuario {
     }
 }
 
-let usuario1 = new Usuario('Carlos', 'Lopez', [{titulo:'El senior de los anillos', autor: 'Tolkien'}], ['roco']);
+let usuario1 = new Usuario('Carlos', 'Lopez', [{ titulo:'El senior de los anillos', autor: 'Tolkien' }], ['roco']);
 
 console.log('-----------------')
 
@@ -48,5 +48,6 @@ usuario1.countMascotas()
 console.log('-----------------')
 usuario1.getBookNames()
 console.log('-----------------')
+/*para verificar
 console.log(usuario1.libros)
-console.log(usuario1.mascota)
+console.log(usuario1.mascota) */
