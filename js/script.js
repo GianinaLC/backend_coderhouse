@@ -48,6 +48,3 @@ usuario1.countMascotas()
 console.log('-----------------')
 usuario1.getBookNames()
 console.log('-----------------')
-/*para verificar
-console.log(usuario1.libros)
-console.log(usuario1.mascota) */
