@@ -26,11 +26,8 @@ class Usuario {
     }
 
     getBookNames(){
-        let librosExistentes;
-        for (let i=0; i < this.libros.length; i++){
-            librosExistentes = this.libros[i].titulo;
-            console.log(`Los libros de ${this.name}: ${[ i + 1 ]}. `  + librosExistentes);
-        }
+        let librosUsuario = this.libros.map(libro => libro.titulo)
+        console.log(librosUsuario)
     }
 }
 
