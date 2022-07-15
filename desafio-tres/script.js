@@ -1,6 +1,6 @@
-import fs from "fs";
+const fs = require('fs')
 
-export default class Contenedor {
+class Contenedor {
     constructor(rutaTexto){
         this.rutaTexto = rutaTexto
     }
@@ -150,3 +150,5 @@ const datoJson = new Contenedor ('productos2'); //JSON YA CREADO CON 3 PRODUCTOS
 
 //eliminar archivo json producto //deleteAll
 /* datoJson.deleteAll() */
+
+module.exports = Contenedor;
