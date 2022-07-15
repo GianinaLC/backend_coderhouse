@@ -2,11 +2,9 @@
     // npm init -y
     // npm i -S express
 
-//agregado en json => "type": "module"
+const Contenedor = require ('./script.js');
+const express = require('express');
 
-
-import Contenedor from "./script.js";
-import express from "express";
 
 
 const app = express();
