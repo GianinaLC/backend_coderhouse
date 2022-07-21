@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 4</title>
+    <style>
+        h1 {
+            color: coral;
+        }
+        input {
+            color: darkgrey;
+        }
+        button {
+            background-color: rgb(81, 82, 81);
+            color: rgb(8, 8, 7);
+            padding: 10px;
+            border: none;
+            display: block;
+            margin-top: 10px;
+        }
+        button:hover{
+            background-color: rgb(16, 93, 165);
+            color: rgba(35, 16, 146, 0.795);
+        }
+    </style>
+</head>
+<body>
+    <h1>Agregar producto</h1>
+   <!--  enctype="multipart/form-data" esssto me rompia todo-->
+   <!--  en postman debo cargar como json y no form-data-->
+    <form action="/api/productos" method="POST">
+        <label for="title">Nombre del producto: </label>
+        <input type="text" name="title" id="title">
+
+        <label for="price">Precio $: </label>
+        <input type="text" name="price" id="price">
+
+        <label for="thumbnail">Imagen: </label>
+        <input type="file" name="thumbnail" id="thumbnail">
+
+        <button type="submit">Agregar producto</button>
+    </form>
+    
+</body>
+</html>
