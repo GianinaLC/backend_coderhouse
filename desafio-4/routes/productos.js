@@ -1,10 +1,63 @@
-/* const { Router } = require('express')
+const express = require('express');
+const routerProductos = express.Router()
+const Contenedor = require('../controllers/script')
 
-const routerProductos = new Router();
+const contenedor = new Contenedor('productos2')
 
-routerProductos.get('/productos', (req, res) => {
-    res.json( { mensaje: 'productos router' })
+//devuelve todos los productos
+routerProductos.get("/", async (req, res, next) => {
+    let response;
+    try {
+      response = await contenedor.getAll();
+      res.send(response);
+    } catch (error) {
+        if(error.code === "ENOENT") { res.send([]) } 
+        else {
+            return next(error) 
+        }
+    }
+});
+
+
+//devuelve el producto segun su id
+routerProductos.get('/:id', async (req, res, next) => {
+    let response;
+    try {
+        let id = parseInt(req.params.id);
+        response = await contenedor.getById(id);
+        res.send(response)
+    } catch (error) {
+        if(error.code === "ENOENT") { res.send({ error: "objeto no encontrado" }) } 
+        else {
+            return next(error)
+        }
+    }
+});
+
+//agrega nuevo producto
+routerProductos.post("/", (req, res, next) => {
+    const obj = req.body
+    contenedor.save(obj)
+    .then(id => { res.send({ id, ...obj }) })
+    .catch(error => next(error))
 })
 
+//modifica un producto --- arreglado, -- pero me falta mostrar el error en postman ---
+//cambie try por then. el try es si hay await
+routerProductos.put("/:id", (req, res, next) => {
+    let response;
+    const id = parseInt(req.params.id)
+    const updateProduct = {id, ...req.body}
+    response = contenedor.updateById(updateProduct,id)
+    .then(res.send({ message: `El producto con id ${id} se actualizo correctamente`}))
+    .catch(res.send({ message : 'El id no existe' }))
+})
 
-module.exports = routerProductos  */
+//eliminar producto byId
+routerProductos.delete("/:id", (req, res) => {
+    const id = parseInt(req.params.id)
+    contenedor.deleteById(id)
+    res.send( { message : 'Producto eliminado' })
+})
+
+module.exports = routerProductos 

@@ -77,6 +77,26 @@ class Contenedor {
         }
     }
 
+    //agregado para el desafio 4, upgrade
+    async updateById(updateProduct, id){
+        const productos = await this.getAll();
+        try {
+            const productoId = productos.indexOf(productos.find(obj => { if (obj.id === id) {return obj} }))
+            if (productoId >= 0) {
+                productos.splice(productoId,1,updateProduct)
+                await fs.promises.writeFile(`./${this.rutaTexto}.json`, JSON.stringify(productos, null, 4))
+                console.log(`Se actualizó el item id ${id}`)
+
+            } else if (productoId < 0) {
+                console.log(`El id ${id} no existe`)
+                throw new Error (`No existe item con Id ${id}`)
+            }
+        } catch (error) {
+            console.log("Error => ", error)
+            throw new Error (`No existe item con Id ${id}`)
+        }
+    }
+
     // deleteById(Number): void - Elimina del archivo el objeto con el id buscado.
     async deleteById(id){
         try {
