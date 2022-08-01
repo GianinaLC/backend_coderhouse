@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+</head>
+<body>
+
+    <div class='container'>
+        <h1 class="my-3"> Productos Cargados </h1>
+
+        <% if (productos.length > 0) { %>
+            
+            <%- include('../partials/table'); %>
+        
+        <% }
+        else { %>
+            
+            <p>No se encontraron datos</p>            
+        
+        <%}%>
+    
+
+        <form class="p-3" action="/" method="get">
+            <button class="btn btn-dark">Volver</button>
+        </form>
+    </div>
+
+</body>
+</html>

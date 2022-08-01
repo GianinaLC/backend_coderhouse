@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Abanico",
+        "price": "100.50",
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Hand_Fan-128.png"
+    },
+    {
+        "id": 2,
+        "title": "Camara",
+        "price": 50000,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Camera-128.png"
+    },
+    {
+        "id": 3,
+        "title": "Frutilla",
+        "price": "345.67",
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Strawberry-128.png"
+    },
+    {
+        "id": 4,
+        "title": "Disco",
+        "price": "200000",
+        "thumbnail": "https://cdn2.iconfinder.com/data/icons/party-new-years/128/Party_Newyears_Vinyl_Cassete-128.png"
+    }
+]
